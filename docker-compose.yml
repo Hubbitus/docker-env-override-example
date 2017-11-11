@@ -1,0 +1,7 @@
+version: '2'
+services:
+  some:
+    # It MUST be on single line https://github.com/docker/compose/issues/4189#issuecomment-338254508 (https://github.com/docker/compose/issues/4670)
+    env_file: .env.$DOCKER_ENV
+    image: fedora
+    command: bash -c 'env | grep DOCKER --color'
